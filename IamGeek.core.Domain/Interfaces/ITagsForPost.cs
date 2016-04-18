@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GeekBlog.Domain.Interfaces
+namespace IamGeek.core.Db.Interfacts
 {
     public interface ITagsForPost
     {

@@ -1,4 +1,4 @@
-﻿namespace GeekBlog.Domain.DomainModel.Projections
+﻿namespace IamGeek.core.Domain.DomainModel.Projections
 {
     public class PostMonthCounts
     {

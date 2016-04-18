@@ -1,15 +1,15 @@
-﻿using GeekBlog.Db.Domain;
+﻿using IamGeek.core.Db.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.Entity;
-using GeekBlog.Domain.DomainModel;
-using GeekBlog.Domain.Interfaces;
-using GeekBlog.Domain.DomainModel.Projections;
+using IamGeek.core.Domain.DomainModel;
+using IamGeek.core.Db.Interfacts;
+using IamGeek.core.Domain.DomainModel.Projections;
 
-namespace GeekBlog.Db.Repositories
+namespace IamGeek.core.Db.Repositories
 {
     public class SqlTagRepository : BaseRepository<PostTags>, ITags
     {

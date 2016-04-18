@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GeekBlog.Domain.Interfaces
+namespace IamGeek.core.Db.Interfacts
 {
     public interface ITagsService
     {

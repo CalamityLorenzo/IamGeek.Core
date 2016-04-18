@@ -1,5 +1,5 @@
-﻿using GeekBlog.Domain.Factories;
-using GeekBlog.Domain.Interfaces;
+﻿using IamGeek.core.Domain.Factories;
+using IamGeek.core.Db.Interfacts;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using System;
@@ -8,8 +8,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IamGeek.core.Db.UnitOfWork;
+using IamGeek.core.Db;
 
-namespace GeekBlog.Db.UnitOfWork
+namespace IamGeek.core.Db
 {
     public class UnitOfWorkFactory : IUnitOfWorkFactory
     {
@@ -29,6 +31,11 @@ namespace GeekBlog.Db.UnitOfWork
             return Instance.GetUnitOfWork<SqlBlogUnitOfWork, BlogContext>("ReadWrite")();
         }
 
+        public IBlogUnitOfWork Get(string connection)
+        {
+            return Instance.GetUnitOfWork<SqlBlogUnitOfWork, BlogContext>(connection)();
+        }
+
         public void RecreateDb()
         {
             var s = "ReadWrite";
@@ -41,12 +48,11 @@ namespace GeekBlog.Db.UnitOfWork
             }
         }
 
-        public Func<TUnitOfWork> GetUnitOfWork<TUnitOfWork, C>(string connectionName) where TUnitOfWork : class, IBlogUnitOfWork where C : BlogContext
+        internal Func<TUnitOfWork> GetUnitOfWork<TUnitOfWork, C>(string connectionName) where TUnitOfWork : class, IBlogUnitOfWork where C : BlogContext
         {
-            var connectionString = "ReadWrite";// ConfigurationManager.ConnectionStrings[connectionName].ConnectionString;
+            var connectionString = connectionName;// ConfigurationManager.ConnectionStrings[connectionName].ConnectionString;
             DbContextOptionsBuilder opts = new DbContextOptionsBuilder();
             opts.UseSqlServer(connectionString);
-
             var ctx = GetContext<C>();
             if (typeof(TUnitOfWork) == typeof(SqlBlogUnitOfWork))
             {

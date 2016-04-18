@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using GeekBlog.Domain.DomainModel;
-using GeekBlog.Domain.DomainModel.Projections;
+using IamGeek.core.Domain.DomainModel;
+using IamGeek.core.Domain.DomainModel.Projections;
 
-namespace GeekBlog.Domain.Interfaces
+namespace IamGeek.core.Db.Interfacts
 {
     public interface IPostsInfoService
     {

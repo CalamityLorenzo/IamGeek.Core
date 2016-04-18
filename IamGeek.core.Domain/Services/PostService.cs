@@ -1,12 +1,12 @@
-﻿using GeekBlog.Domain.DomainModel;
+﻿using IamGeek.core.Domain.DomainModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GeekBlog.Domain.Interfaces;
+using IamGeek.core.Db.Interfacts;
 
-namespace GeekBlog.Domain.Services
+namespace IamGeek.core.Domain.Services
 {
     // Handles getting a full post
    public class PostService : IPostService

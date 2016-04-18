@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GeekBlog.Domain.Interfaces
+namespace IamGeek.core.Db.Interfacts
 {
     public interface IBlogUnitOfWork :IDisposable
     {

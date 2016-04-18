@@ -1,12 +1,12 @@
-﻿using GeekBlog.Domain.Interfaces;
-using GeekBlog.Domain.Services;
+﻿using IamGeek.core.Db.Interfacts;
+using IamGeek.core.Domain.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GeekBlog.Domain.DomainModel
+namespace IamGeek.core.Domain.DomainModel
 {
     public class BlogPost
     {

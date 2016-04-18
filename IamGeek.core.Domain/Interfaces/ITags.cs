@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using GeekBlog.Domain.DomainModel;
+using IamGeek.core.Domain.DomainModel;
 
-namespace GeekBlog.Domain.Interfaces
+namespace IamGeek.core.Db.Interfacts
 {
     public interface ITags
     {

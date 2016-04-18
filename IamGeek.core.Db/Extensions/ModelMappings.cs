@@ -1,4 +1,4 @@
-﻿using GeekBlog.Domain.DomainModel;
+﻿using IamGeek.core.Domain.DomainModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 
 
-namespace GeekBlog.Db.Domain
+namespace IamGeek.core.Db.Domain
 {
     public static class MapExtensions
     {

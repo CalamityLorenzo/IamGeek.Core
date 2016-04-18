@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.Entity;
-using GeekBlog.Db.Domain;
+using IamGeek.core.Db.Domain;
 using System.Globalization;
-using GeekBlog.Domain.DomainModel;
-using GeekBlog.Domain.Interfaces;
+using IamGeek.core.Domain.DomainModel;
+using IamGeek.core.Db.Interfacts;
 
-namespace GeekBlog.Db.Repositories
+namespace IamGeek.core.Db.Repositories
 {
    public class SqlPostInfoRepository : BaseRepository<PostMetaData>, IPostsInfo
     {

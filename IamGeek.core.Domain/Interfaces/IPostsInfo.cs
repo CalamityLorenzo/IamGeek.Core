@@ -1,9 +1,9 @@
-﻿using GeekBlog.Domain.DomainModel;
-using GeekBlog.Domain.Services;
+﻿using IamGeek.core.Domain.DomainModel;
+using IamGeek.core.Domain.Services;
 using System;
 using System.Collections.Generic;
 
-namespace GeekBlog.Domain.Interfaces
+namespace IamGeek.core.Db.Interfacts
 {
     public interface IPostsInfo
     {

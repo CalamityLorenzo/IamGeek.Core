@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GeekBlog.Domain.DomainModel
+namespace IamGeek.core.Domain.DomainModel
 {
     public class BlogPostTag
     {

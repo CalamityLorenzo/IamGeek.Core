@@ -1,4 +1,4 @@
-﻿using GeekBlog.Db.Repositories;
+﻿using IamGeek.core.Db.Repositories;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Extensions;
 using Microsoft.Data.Entity.Infrastructure;
@@ -8,9 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GeekBlog.Domain.Interfaces;
+using IamGeek.core.Db.Interfacts;
 
-namespace GeekBlog.Db.UnitOfWork
+namespace IamGeek.core.Db.UnitOfWork
 {
     public class SqlBlogUnitOfWork : IBlogUnitOfWork
     {

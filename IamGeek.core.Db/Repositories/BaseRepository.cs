@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GeekBlog.Db.Repositories
+namespace IamGeek.core.Db.Repositories
 {
     public abstract class BaseRepository<TEntity> where TEntity : class
     {

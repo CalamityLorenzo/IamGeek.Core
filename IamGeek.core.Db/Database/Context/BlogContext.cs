@@ -1,8 +1,8 @@
 ﻿using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
-using GeekBlog.Db.Domain;
+using IamGeek.core.Db.Domain;
 
-namespace GeekBlog.Db
+namespace IamGeek.core.Db
 {
     public class BlogContext : DbContext
     {

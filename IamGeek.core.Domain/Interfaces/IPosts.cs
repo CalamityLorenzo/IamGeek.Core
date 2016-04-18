@@ -1,7 +1,7 @@
-﻿using GeekBlog.Domain.DomainModel;
+﻿using IamGeek.core.Domain.DomainModel;
 using System;
 
-namespace GeekBlog.Domain.Interfaces
+namespace IamGeek.core.Db.Interfacts
 {
     public interface IPosts
     {

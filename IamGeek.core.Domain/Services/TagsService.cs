@@ -1,12 +1,12 @@
-﻿using GeekBlog.Domain.DomainModel;
-using GeekBlog.Domain.Interfaces;
+﻿using IamGeek.core.Domain.DomainModel;
+using IamGeek.core.Db.Interfacts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GeekBlog.Domain.Services
+namespace IamGeek.core.Domain.Services
 {
     public class TagsService : ITagsService
     {

@@ -8,6 +8,7 @@ using IamGeek.core.Db.Interfacts;
 using IamGeek.core.Db.UnitOfWork;
 using IamGeek.core.Domain.Services;
 using IamGeek.core.Db;
+using IamGeek.core.Db.Manager;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,17 +17,18 @@ namespace Core.Blog.Api.Controllers
     [Route("api/[controller]")]
     public class BlogPostController : Controller
     {
+        private readonly SqlBlogManager _manager;
+        public BlogPostController(SqlBlogManager manager)
+        {
+            _manager = manager;
+        }
         // GET: api/values
         [HttpGet("GetByUrl/{PostUrl}")]
         public IActionResult Get(string PostUrl)
         {
             if (!string.IsNullOrEmpty(PostUrl))
             {
-                using (IBlogUnitOfWork blgUow = UnitOfWorkFactory.Instance.Get("Data Source=.\\SQLEXPRESS;Initial Catalog=pclBlogDb;Integrated Security=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
-                {
-                    IPostService postService = new PostService(blgUow.Posts);
-                    return new HttpOkObjectResult(postService.GetPost(PostUrl));
-                }
+                return Ok(_manager.Posts.GetPost(PostUrl));
             }
             else
             {
@@ -40,11 +42,7 @@ namespace Core.Blog.Api.Controllers
         {
             if (PostId.HasValue && PostId.Value != Guid.Empty)
             {
-                using (IBlogUnitOfWork blgUow = UnitOfWorkFactory.Instance.Get("Data Source=.\\SQLEXPRESS;Initial Catalog=pclBlogDb;Integrated Security=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
-                {
-                    IPostService postService = new PostService(blgUow.Posts);
-                    return new HttpOkObjectResult(postService.GetPost(PostId.Value));
-                }
+                return Ok(_manager.Posts.GetPost(PostId.Value));
             }
             else
             {

@@ -19,7 +19,9 @@ namespace Microsoft.Extensions.DependencyInjection
             BlogConfigurationBuilder.AddBuilder("NotSoCommon", (bConfig) => new SqlBlogManager(UnitOfWorkFactory.Instance.Get(bConfig.Connections["Read"])));
             BlogConfigurationBuilder.Build();
 
-            srv.AddTransient(new ServiceDescriptor(typeof(ISqlBlogManager), BlogConfigurationBuilder.Config.Managers["ReadWrite"]));
+            srv.AddTransient<SqlBlogManager>((o)=> { var blgMan = BlogConfigurationBuilder.Config.Managers["Common"](BlogConfigurationBuilder.Config);
+                return blgMan as SqlBlogManager;
+            });
         }
     }
 }

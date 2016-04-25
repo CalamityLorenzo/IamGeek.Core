@@ -12,7 +12,7 @@ using IamGeek.core.Db.Interfacts;
 
 namespace IamGeek.core.Db.UnitOfWork
 {
-    public class SqlBlogUnitOfWork : IBlogUnitOfWork
+    public class SqlBlogUnitOfWork : ISqlBlogUnitOfWork
     {
         private bool _disposed = false;
 

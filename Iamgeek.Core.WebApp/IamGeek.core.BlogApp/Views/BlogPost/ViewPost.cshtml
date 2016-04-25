@@ -1,0 +1,15 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IamGeek.core.Domain.DomainModel.BlogPost
+
+<div class="expanded row">
+    <div class="small-12 columns">
+        <h1>@Model.Title</h1>
+        <h4>@Model.Id</h4>
+    </div>
+    <div class="small-12 columns">
+        <p><em>@Model.DateCreated.ToString("D")</em></p>
+        <p>@Model.Body</p>
+    </div>
+</div>

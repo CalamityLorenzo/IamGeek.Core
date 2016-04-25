@@ -12,6 +12,7 @@ namespace IamGeek.core.Domain.Factories
         IBlogUnitOfWork Readonly();
         IBlogUnitOfWork ReadWrite();
         IBlogUnitOfWork Get(string connection);
+        T Get<T>(string connection) where T : class, IBlogUnitOfWork;
     //    TUnitOfWork GetUnitOfWork<TUnitOfWork>(string connectionName);
     }
 }

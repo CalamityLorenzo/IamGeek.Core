@@ -24,7 +24,9 @@ namespace IamGeek.core.Db.Repositories
 
         public IEnumerable<BlogPostInfo> GetAllPostsForMonth(int year, int month)
         {
-            return Entities.Include(o => o.PostHeader).Where(o => o.DateCreated.Year == year && o.DateCreated.Month == month).Select(o => o.MapBlogPostInfo()).ToList();
+            // get the entites first
+            var items = Entities.Include(o => o.PostHeader).Where(o => o.DateCreated.Year == year && o.DateCreated.Month == month).ToList();
+            return items.Select(o => o.MapBlogPostInfo());
         }
 
         public IEnumerable<int> GetAllYears()

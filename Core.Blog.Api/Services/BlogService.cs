@@ -1,5 +1,7 @@
 ﻿using IamGeek.core.Db;
+using IamGeek.core.Db.Interfacts;
 using IamGeek.core.Db.Manager;
+using IamGeek.core.Db.UnitOfWork;
 using IamGeek.core.Domain.Configuration;
 using IamGeek.core.Domain.Interface;
 using System;
@@ -19,9 +21,8 @@ namespace Microsoft.Extensions.DependencyInjection
             BlogConfigurationBuilder.AddBuilder("NotSoCommon", (bConfig) => new SqlBlogManager(UnitOfWorkFactory.Instance.Get(bConfig.Connections["Read"])));
             BlogConfigurationBuilder.Build();
 
-            srv.AddTransient<SqlBlogManager>((o)=> { var blgMan = BlogConfigurationBuilder.Config.Managers["Common"](BlogConfigurationBuilder.Config);
-                return blgMan as SqlBlogManager;
-            });
+            srv.AddTransient<ISqlBlogUnitOfWork>((o) => UnitOfWorkFactory.Instance.Get<ISqlBlogUnitOfWork>("Data Source=.\\SQLEXPRESS;Initial Catalog=pclBlogDb;integrated security=true"));
+            srv.AddTransient<SqlBlogManager, SqlBlogManager>();
         }
     }
 }

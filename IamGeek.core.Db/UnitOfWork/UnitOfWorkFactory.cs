@@ -36,6 +36,13 @@ namespace IamGeek.core.Db
             return Instance.GetUnitOfWork<SqlBlogUnitOfWork, BlogContext>(connection)();
         }
 
+        public T Get<T>(string connection) where T : class, IBlogUnitOfWork
+        {
+            return Instance.GetUnitOfWork<T, BlogContext>(connection)();
+        }
+
+
+
         public void RecreateDb()
         {
             var s = "ReadWrite";
@@ -57,6 +64,10 @@ namespace IamGeek.core.Db
             if (typeof(TUnitOfWork) == typeof(SqlBlogUnitOfWork))
             {
                 return ()=>  new SqlBlogUnitOfWork(ctx(opts.Options)) as TUnitOfWork;
+            }
+
+            if(typeof(TUnitOfWork) == typeof(ISqlBlogUnitOfWork)){
+                return () => new SqlBlogUnitOfWork(ctx(opts.Options)) as TUnitOfWork;
             }
 
             throw new ArgumentOutOfRangeException("Cannot construct Uow");

@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<IamGeek.core.Domain.DomainModel.BlogPostInfo>
+
+<h1>Most recent</h1>
+@foreach (var postItems in Model)
+{
+    <div class="row">
+        <div class="small-12 columns">
+            <a href="@postItems.Url">  <h1>@postItems.Title</h1></a>
+            <p>
+                <span class="dateTime">@postItems.Created</span>
+                <span class="dateTime">@postItems.LastModifed</span>
+            </p>
+            <p>@postItems.InfoText</p>
+        </div>
+    </div>
+}

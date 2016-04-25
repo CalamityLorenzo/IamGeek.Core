@@ -1,0 +1,44 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation Starter Template</title>
+    <environment names="Development">
+        <link href="~/content/css/foundation.css" rel="stylesheet" />
+    </environment>
+    <environment names="Staging, Production">
+        <link href="~/content/css/foundation.min.css" rel="stylesheet" />
+        <link href="~/content/css/app.min.css" rel="stylesheet" />
+    </environment>
+</head>
+<body>
+    <div class="">
+        <div class="top-bar-left">
+            <ul class="menu">
+                <li class="menu-text">I am Geek</li>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row medium-8 small-8 columns">
+            @RenderBody()
+    </div>
+    <environment names="Development">
+        <script src="~/scripts/jquery.js"></script>
+        <script src="~/scripts/what-input.js"></script>
+        <script src="~/scripts/foundation.js"></script>
+    </environment>
+    <environment names="Staging, Production">
+        <script src="~/scripts/jquery.js"></script>
+        <script src="~/scripts/what-input.js"></script>
+        <script src="~/scripts/foundation.min.js"></script>
+    </environment>
+    <script>
+      $(document).foundation();
+    </script>
+
+</body>
+</html>

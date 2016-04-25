@@ -14,17 +14,23 @@
     </environment>
 </head>
 <body>
-    <div class="">
-        <div class="top-bar-left">
+
+    <div class="title-bar" data-responsive-toggle="myMenu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title">I am Geek</div>
+    </div>
+
+    <nav class="top-bar" id="myMenu">
+        <div class="top-bar-left" data-responsive-menu="drilldown medium-dropdown" >
             <ul class="menu">
                 <li class="menu-text">I am Geek</li>
-                <li><a href="">Home</a></li>
+                <li><a asp-controller="BlogPost" asp-action="Index" >Home</a></li>
                 <li><a href="">About</a></li>
             </ul>
         </div>
-    </div>
-    <div class="row medium-8 small-8 columns">
-            @RenderBody()
+    </nav>
+    <div class="row medium-12 small-12 columns">
+        @RenderBody()
     </div>
     <environment names="Development">
         <script src="~/scripts/jquery.js"></script>
@@ -37,7 +43,7 @@
         <script src="~/scripts/foundation.min.js"></script>
     </environment>
     <script>
-      $(document).foundation();
+        $(document).foundation();
     </script>
 
 </body>
